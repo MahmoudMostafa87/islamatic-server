@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Profile</title>
+</head>
+<body>
+  <h2>Update My Profile</h2>
+  <form id="updateForm" enctype="multipart/form-data">
+    <!-- <input type="text" name="first_name" placeholder="First Name" required><br>
+    <input type="text" name="last_name" placeholder="Last Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="text" name="phone_number" placeholder="Phone Number" required><br>
+    <input type="text" name="country" placeholder="Country" required><br>
+    <input type="text" name="country_code" placeholder="Country Code" required><br> -->
+    <label>Image:</label><br>
+    <input type="file" name="image"><br><br>
+
+    <button type="submit">Update Profile</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    document.getElementById("updateForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const form = document.getElementById("updateForm");
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("http://localhost:4000/profile/uploadImage", {
+          method: "PATCH", // أو "POST" إذا كنت تستخدمها
+          credentials: "include", // مهم لإرسال الـ cookies إن وجد
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          document.getElementById("message").innerText = data.message;
+        } else {
+          document.getElementById("message").innerText = data.error || data.message;
+        }
+      } catch (err) {
+        document.getElementById("message").innerText = "Error updating profile.";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
