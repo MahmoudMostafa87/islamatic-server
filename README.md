@@ -1,39 +1,39 @@
-├── .gitignore
-├── controller
+├── .gitignore 
+├── controller 
     ├── categoryController.js
     ├── homeController.js
     ├── lectureController.js
     ├── profileController.js
     └── saved_lectureController.js
-├── docApiRes.md
-├── middleware
+├── docApiRes.md 
+├── middleware 
     ├── admin.js
     ├── auth.js
     ├── error.js
     ├── upload.js
     └── validationId.js
-├── module
+├── module 
     ├── Quran.sql
     └── db.js
-├── package-lock.json
-├── package.json
-├── public
+├── package-lock.json 
+├── package.json 
+├── public 
     ├── createLecture.html
     ├── sda.html
     ├── signAouth.html
     └── updateProfile.html
-├── router
+├── router 
     ├── category.js
     ├── home.js
     ├── lecture.js
     ├── profile.js
     └── saved_lecture.js
-├── server.js
-├── startup
+├── server.js 
+├── startup 
     ├── AouthConfig.js
     ├── logging.js
     └── router.js
-└── utils
+└── utils 
     ├── catchError.js
     ├── deleteFile.js
     ├── generateOtp.js
@@ -42,7 +42,7 @@
     └── validation.js
 
 
-/.gitignore:
+/.gitignore: 
 --------------------------------------------------------------------------------
-1 | .env
-2 | /node_modules
+1 | .env 
+2 | /node_modules 
